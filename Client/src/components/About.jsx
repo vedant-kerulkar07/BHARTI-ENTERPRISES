@@ -41,7 +41,7 @@ const About = () => {
                             className="absolute top-0 left-32 bg-white p-4 rounded-md shadow-2xl rotate-[-8deg]"
                         >
                             <img
-                                src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3"
+                                src="https://res.cloudinary.com/dfpgxonqe/image/upload/v1781854229/image_2_tc0mpa.jpg"
                                 alt=""
                                 className="w-[250px] h-[320px] object-cover"
                             />
@@ -56,7 +56,7 @@ const About = () => {
                             className="absolute bottom-8 left-0 bg-white p-4 rounded-md shadow-2xl rotate-[-4deg]"
                         >
                             <img
-                                src="https://images.unsplash.com/photo-1497366754035-f200968a6e72"
+                                src="https://res.cloudinary.com/dfpgxonqe/image/upload/v1781853985/images_kl9b1i.jpg"
                                 alt=""
                                 className="w-[280px] h-[220px] object-cover"
                             />
@@ -75,7 +75,7 @@ const About = () => {
                             className="absolute bottom-20 left-56 bg-white p-4 rounded-md shadow-2xl rotate-[6deg]"
                         >
                             <img
-                                src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f"
+                                src="https://res.cloudinary.com/dfpgxonqe/image/upload/v1781854067/images_1_accmjx.jpg"
                                 alt=""
                                 className="w-[250px] h-[180px] object-cover"
                             />
@@ -89,7 +89,7 @@ const About = () => {
                     {/* MOBILE IMAGE */}
                     <div className="lg:hidden">
                         <img
-                            src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3"
+                            src="https://res.cloudinary.com/dfpgxonqe/image/upload/v1781853985/images_kl9b1i.jpg"
                             alt=""
                             className="rounded-3xl"
                         />
