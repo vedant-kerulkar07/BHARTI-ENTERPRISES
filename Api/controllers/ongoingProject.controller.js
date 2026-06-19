@@ -40,6 +40,7 @@ export const uploadProjectImage = async (req, res, next) => {
       message: "Image uploaded successfully",
       data: project,
     });
+    
   } catch (error) {
     console.log("UPLOAD ERROR:", error);
     next(error);
