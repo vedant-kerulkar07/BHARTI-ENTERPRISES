@@ -97,7 +97,7 @@ const About = () => {
 
                     {/* RIGHT CONTENT */}
                     <div>
-                        <h2 className="text-5xl font-bold text-white">
+                        <h2 className="text-5xl font-bold text-white ">
                             About
                         </h2>
 

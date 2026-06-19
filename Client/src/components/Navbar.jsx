@@ -1,12 +1,6 @@
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
-import {
-    Sheet,
-    SheetContent,
-    SheetTrigger,
-} from "@/components/ui/sheet";
 import { FaRocket } from "react-icons/fa";
-import { Menu } from "lucide-react";
 
 const navLinks = [
     "About",
@@ -66,41 +60,6 @@ const Navbar = () => {
                             </Button>
                         </motion.div>
                     </div>
-
-                    {/* Mobile Menu */}
-                    <div className="md:hidden">
-                        <Sheet>
-                            <SheetTrigger asChild>
-                                <button className="rounded-xl border border-white/10 p-2 text-white">
-                                    <Menu size={24} />
-                                </button>
-                            </SheetTrigger>
-
-                            <SheetContent
-                                side="right"
-                                className="border-white/10 bg-[#04142E] text-white"
-                            >
-                                <div className="mt-12 flex flex-col gap-6">
-
-                                    {navLinks.map((item) => (
-                                        <a
-                                            key={item}
-                                            href={`#${item.toLowerCase()}`}
-                                            className="text-lg font-semibold text-white/80 transition hover:text-cyan-400"
-                                        >
-                                            {item}
-                                        </a>
-                                    ))}
-
-                                    <Button className="mt-6 rounded-full bg-gradient-to-r from-cyan-500 to-blue-600">
-                                        Get Started
-                                    </Button>
-
-                                </div>
-                            </SheetContent>
-                        </Sheet>
-                    </div>
-
                 </div>
             </div>
         </motion.header>
