@@ -1,18 +1,38 @@
 
 import { handleError } from "../helpers/handleError.js";
 import OngoingProject from "../models/OngoingProject.js";
+import cloudinary from "../config/cloudinary.js";
+import streamifier from "streamifier";
 
-// Upload Image
+const uploadToCloudinary = (buffer) => {
+  return new Promise((resolve, reject) => {
+    const stream = cloudinary.uploader.upload_stream(
+      {
+        folder: "bharat-enterprises/projects",
+        resource_type: "auto",
+      },
+      (error, result) => {
+        if (error) reject(error);
+        else resolve(result);
+      }
+    );
+
+    streamifier.createReadStream(buffer).pipe(stream);
+  });
+};
+
 export const uploadProjectImage = async (req, res, next) => {
   try {
+
     if (!req.file) {
       return next(handleError(400, "Image is required"));
     }
 
-    const imagePath = `/uploads/projects/${req.file.filename}`;
+    const uploadResult = await uploadToCloudinary(req.file.buffer);
 
     const project = await OngoingProject.create({
-      image: imagePath,
+      image: uploadResult.secure_url,
+      public_id: uploadResult.public_id,
     });
 
     res.status(201).json({
@@ -21,6 +41,7 @@ export const uploadProjectImage = async (req, res, next) => {
       data: project,
     });
   } catch (error) {
+    console.log("UPLOAD ERROR:", error);
     next(error);
   }
 };

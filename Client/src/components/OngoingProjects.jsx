@@ -91,9 +91,10 @@ const OngoingProjects = () => {
                                 className="mb-5 overflow-hidden rounded-[32px] border border-white/10 bg-white/5"
                             >
                                 <img
-                                    src={`${getEnv("VITE_SERVER_URL")}${project.image}`}
+                                    src={project.image}
                                     alt="Project"
                                     className="w-full h-auto"
+                                    loading="lazy"
                                 />
                             </div>
                         ))}
@@ -112,9 +113,10 @@ const OngoingProjects = () => {
                                 className="min-w-[85%] snap-center overflow-hidden rounded-3xl border border-white/10 bg-white/5">
 
                                 <img
-                                    src={`${getEnv("VITE_SERVER_URL")}${project.image}`}
+                                    src={project.image}
                                     alt="Project"
                                     className="h-[450px] w-full object-cover"
+                                    loading="lazy"
                                 />
                             </motion.div>
                         ))}
