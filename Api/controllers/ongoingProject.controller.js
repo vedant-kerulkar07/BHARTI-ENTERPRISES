@@ -67,3 +67,31 @@ export const getProjectImages = async (req, res, next) => {
     next(error);
   }
 };
+
+
+export const deleteProjectImage = async (req, res, next) => {
+  try {
+    const { id } = req.params;
+
+    const project = await OngoingProject.findById(id);
+
+    if (!project) {
+      return next(handleError(404, "Image not found"));
+    }
+
+    // Delete image from Cloudinary
+    if (project.public_id) {
+      await cloudinary.uploader.destroy(project.public_id);
+    }
+
+    // Delete record from MongoDB
+    await OngoingProject.findByIdAndDelete(id);
+
+    res.status(200).json({
+      success: true,
+      message: "Image deleted successfully",
+    });
+  } catch (error) {
+    next(error);
+  }
+};

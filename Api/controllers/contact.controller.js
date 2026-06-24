@@ -29,3 +29,18 @@ export const createContact = async (req, res, next) => {
         next(error);
     }
 };
+
+export const getAllContacts = async (req, res, next) => {
+    try {
+        const contacts = await Contact.find()
+            .sort({ createdAt: -1 });
+
+        res.status(200).json({
+            success: true,
+            count: contacts.length,
+            data: contacts,
+        });
+    } catch (error) {
+        next(error);
+    }
+};

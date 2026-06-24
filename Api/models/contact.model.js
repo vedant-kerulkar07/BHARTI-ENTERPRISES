@@ -23,7 +23,7 @@ const contactSchema = new mongoose.Schema(
         "Transportation Services",
         "Civil Construction",
         "Engineering Services",
-        " Other",
+        "Other",
       ],
     },
 
