@@ -85,6 +85,7 @@ export const deleteProjectImage = async (req, res, next) => {
     }
 
     // Delete record from MongoDB
+    
     await OngoingProject.findByIdAndDelete(id);
 
     res.status(200).json({
